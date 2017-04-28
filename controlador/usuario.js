@@ -55,6 +55,10 @@ function postUsuario (req, res){
 	usuario.foto = req.body.foto
 	usuario.correo = req.body.correo
 	usuario.id = req.body.id
+	usuario.clave = req.body.clave
+	usuario.numPartidas = req.body.numPartidas
+	usuario.puntuacion = req.body.puntuacion
+	usuario.listGanadas = req.body.listGanadas
 
 	usuario.save((err, usuarioStored) =>{
 		if(err) res.status(500).send({message: `Error al salvar en la base de datos: ${err}`})
