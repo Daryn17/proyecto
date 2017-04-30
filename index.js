@@ -14,6 +14,6 @@ mongoose.connect('mongodb://localhost:27017/cuatro', (err, res) =>{
 	console.log('Conexión a la BD')
 
 	app.listen(port, () => {
-		console.log(`Hola mundo!!${port}`)
+		console.log(`Conectado al puerto: ${port}`)
 	})
 })

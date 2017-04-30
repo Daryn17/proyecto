@@ -21,7 +21,8 @@ function getUsuarios(req, res){
 		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
 		if (!usuarios) return res.status(404).send({message:'No existen usuarios'})
 
-		res.send(200, {usuarios})
+		//res.send(200, {usuarios})
+		res.status(200).send({usuarios})
 	})
 }
 
@@ -44,7 +45,7 @@ function deleteUsuario(req, res){
 
 		usuario.remove(err => {
 			if (err) return res.status(500).send({message: `Error al borrar el usuario ${err}`})
-			res.status(200).send({message: 'El usuario a sido eliminado'})
+			res.status(200).send({message: 'El usuario ha sido eliminado'})
 		})
 	})
 }

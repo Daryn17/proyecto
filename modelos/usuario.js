@@ -10,10 +10,10 @@ const UsuarioSchema = Schema({
 	clave: String,
 	numPartidas: Number,
 	puntuacion: Number,
-	listGanadas: [],
+	listGanadas: [String],
 	id: Number
 })
 
-module.exports = mongoose.model('Product', UsuarioSchema)
+module.exports = mongoose.model('Usuario', UsuarioSchema)
 
 
