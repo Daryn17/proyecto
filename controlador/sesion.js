@@ -61,6 +61,10 @@ function postSesion (req, res){
 	sesion.idJugador1 = req.body.idJugador1
 	sesion.idJugador2 = req.body.idJugador2
 	sesion.listPartidas = req.body.listPartidas
+	sesion.backGroundColor = req.body.backGroundColor
+	sesion.colorJugador1 = req.body.colorJugador1
+	sesion.colorJugador2 = req.body.colorJugador2
+	sesion.juegoActual = req.body.juegoActual
 
 	sesion.save((err, sesionStored) =>{
 		if(err) res.status(500).send({message: `Error al salvar en la base de datos: ${err}`})

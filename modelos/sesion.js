@@ -11,7 +11,11 @@ const SesionSchema = Schema({
 	estado: String,
 	idJugador1: String,
 	idJugador2: String,
-	listPartidas: [String]
+	listPartidas: [String],
+	backGroundColor: String,
+	colorJugador1: String,
+	colorJugador2: String,
+	juegoActual: Number 
 	
 })
 

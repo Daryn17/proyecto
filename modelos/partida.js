@@ -5,11 +5,10 @@ const Schema = mongoose.Schema
 
 const PartidaSchema = Schema({
 	tablero: [Number],
-	Ganador: String,
-	Actual: String,
+	ganador: String,
+	actual: String,
 	numMovimiento: Number
 })
 
 module.exports = mongoose.model('Partida', PartidaSchema)
-
 

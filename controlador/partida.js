@@ -54,8 +54,8 @@ function postPartida (req, res){
 	let partida = new Partida()
 
 	partida.tablero = req.body.tablero
-	partida.Ganador = req.body.Ganador
-	partida.Actual = req.body.Actual
+	partida.ganador = req.body.ganador
+	partida.actual = req.body.actual
 	partida.numMovimiento = req.body.numMovimiento
 
 	partida.save((err, partidaStored) =>{

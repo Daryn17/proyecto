@@ -55,7 +55,6 @@ function postUsuario (req, res){
 	usuario.nombre = req.body.nombre
 	usuario.foto = req.body.foto
 	usuario.correo = req.body.correo
-	usuario.id = req.body.id
 	usuario.clave = req.body.clave
 	usuario.numPartidas = req.body.numPartidas
 	usuario.puntuacion = req.body.puntuacion
