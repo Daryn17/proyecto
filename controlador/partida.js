@@ -5,7 +5,7 @@ const Partida = require('../modelos/partida')
 
 function getPartida(req, res){
 	let partidaId = req.params.partidaId
-
+	console.log("1")
 	Partida.findById(partidaId, (err, partida) => {
 		if (err) return res.status(500).send({message: `Error al realizar la petición ${err}`})
 
@@ -16,7 +16,7 @@ function getPartida(req, res){
 }
 
 function getPartidas(req, res){
-
+	console.log("2")
 	Partida.find({}, (err, partidas) => {
 		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
 		if (!partidas) return res.status(404).send({message:'No existen partidas'})
@@ -52,7 +52,8 @@ function deletePartida(req, res){
 
 function postPartida (req, res){
 	let partida = new Partida()
-
+	console.log("sdgsfgd")
+	console.log(req.body)
 	partida.tablero = req.body.tablero
 	partida.ganador = req.body.ganador
 	partida.actual = req.body.actual
@@ -65,10 +66,28 @@ function postPartida (req, res){
 	})
 }
 
+function getPartidasSesion (req, res){
+	console.log("-------------------------------------------")
+	console.log(req.params)
+	let partidasId = req.params.partidasId.split(",")
+	console.log(partidasId)
+
+
+	Partida.find({"_id":{$in: partidasId} }, (err, partidas) => {
+		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
+		if (!partidas) return res.status(404).send({message:'No existen partidas'})
+
+		res.status(200).send({partidas})
+	})
+
+
+}
+
 module.exports = {
 	getPartida,
 	getPartidas,
 	updatePartida,
 	deletePartida,
-	postPartida
+	postPartida,
+	getPartidasSesion
 }

@@ -20,3 +20,6 @@ const SesionSchema = Schema({
 })
 
 module.exports = mongoose.model('Sesion', SesionSchema)
+
+
+

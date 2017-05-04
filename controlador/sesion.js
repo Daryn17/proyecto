@@ -5,7 +5,7 @@ const Sesion = require('../modelos/sesion')
 
 function getSesion(req, res){
 	let sesionId = req.params.sesionId
-
+	console.log("Una sesion")
 	Sesion.findById(sesionId, (err, sesion) => {
 		if (err) return res.status(500).send({message: `Error al realizar la petición ${err}`})
 
@@ -16,7 +16,7 @@ function getSesion(req, res){
 }
 
 function getSesiones(req, res){
-
+	console.log("Varias sesiones")
 	Sesion.find({}, (err, sesiones) => {
 		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
 		if (!sesiones) return res.status(404).send({message:'No existen sesiones'})

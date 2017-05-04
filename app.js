@@ -41,6 +41,8 @@ app.put('/api/partida/:partidaId',PartidaCtrl.updatePartida)
 
 app.delete('/api/partida/:partidaId',PartidaCtrl.deletePartida)
 
+app.get('/api/partidas/:partidasId', PartidaCtrl.getPartidasSesion)
+
 //----------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------

@@ -5,18 +5,20 @@ const Usuario = require('../modelos/usuario')
 
 function getUsuario(req, res){
 	let usuarioId = req.params.usuarioId
-
-	Usuario.findById(usuarioId, (err, usuario) => {
+	//let to  = req.params.to
+	console.log(usuarioId)
+	//console.log(to)
+	/*Usuario.findById(usuarioId, (err, usuario) => {
 		if (err) return res.status(500).send({message: `Error al realizar la petición ${err}`})
 
 		if (!usuario) return res.status(404).send({message: 'El usuario no exixte'})
 
 		res.status(200).send({usuario})
-	})
+	})*/
 }
 
 function getUsuarios(req, res){
-
+	console.log("afiahsn")
 	Usuario.find({}, (err, usuarios) => {
 		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
 		if (!usuarios) return res.status(404).send({message:'No existen usuarios'})
