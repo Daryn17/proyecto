@@ -26,6 +26,8 @@ app.put('/api/usuario/:usuarioId',UsuarioCtrl.updateUsuario)
 
 app.delete('/api/usuario/:usuarioId',UsuarioCtrl.deleteUsuario)
 
+app.get('/api/usuarioLog/:nombre-:clave', UsuarioCtrl.getUsuarioLog)
+
 //----------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------
@@ -57,6 +59,8 @@ app.post('/api/sesion', SesionCtrl.postSesion)
 app.put('/api/sesion/:sesionId',SesionCtrl.updateSesion)
 
 app.delete('/api/sesion/:sesionId',SesionCtrl.deleteSesion)
+
+app.get('/api/sesiones/:estado', SesionCtrl.getSesionesWaiting)
 
 //----------------------------------------------------------------------------
 

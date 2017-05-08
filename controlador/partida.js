@@ -67,20 +67,14 @@ function postPartida (req, res){
 }
 
 function getPartidasSesion (req, res){
-	console.log("-------------------------------------------")
-	console.log(req.params)
+	
 	let partidasId = req.params.partidasId.split(",")
-	console.log(partidasId)
-
-
 	Partida.find({"_id":{$in: partidasId} }, (err, partidas) => {
 		if(err) return res.status(500).send({message:`Error al realizar la petición: ${err}`})
 		if (!partidas) return res.status(404).send({message:'No existen partidas'})
 
 		res.status(200).send({partidas})
 	})
-
-
 }
 
 module.exports = {
