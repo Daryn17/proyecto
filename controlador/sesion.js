@@ -28,12 +28,15 @@ function getSesiones(req, res){
 function updateSesion(req, res){
 	let sesionId = req.params.sesionId
 	let update = req.body
-
+	console.log(sesionId)
+	console.log(update)
+	
 	Sesion.findByIdAndUpdate(sesionId, update ,(err, sesionUpdate) => {
 		if (err) return res.status(500).send({message: `Error al actualizar la sesion ${err}`})
 
 		res.status(200).send({sesion: sesionUpdate})
 	})
+	
 }
 
 function deleteSesion(req, res){
@@ -65,6 +68,8 @@ function postSesion (req, res){
 	sesion.colorJugador1 = req.body.newSesionData.colorJugador1
 	sesion.colorJugador2 = req.body.newSesionData.colorJugador2
 	sesion.juegoActual = req.body.newSesionData.juegoActual
+	sesion.puntuacion = req.body.newSesionData.puntuacion
+	sesion.nombre = req.body.newSesionData.nombre
 
 	sesion.save((err, sesionStored) =>{
 		if(err) res.status(500).send({message: `Error al salvar en la base de datos: ${err}`})

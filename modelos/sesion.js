@@ -15,7 +15,9 @@ const SesionSchema = Schema({
 	backGroundColor: String,
 	colorJugador1: String,
 	colorJugador2: String,
-	juegoActual: Number 
+	juegoActual: Number,
+	puntuacion: Number,
+	nombre: String
 	
 })
 
