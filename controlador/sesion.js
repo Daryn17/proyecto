@@ -70,6 +70,7 @@ function postSesion (req, res){
 	sesion.juegoActual = req.body.newSesionData.juegoActual
 	sesion.puntuacion = req.body.newSesionData.puntuacion
 	sesion.nombre = req.body.newSesionData.nombre
+	sesion.board = req.body.newSesionData.board
 
 	sesion.save((err, sesionStored) =>{
 		if(err) res.status(500).send({message: `Error al salvar en la base de datos: ${err}`})

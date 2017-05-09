@@ -17,7 +17,8 @@ const SesionSchema = Schema({
 	colorJugador2: String,
 	juegoActual: Number,
 	puntuacion: Number,
-	nombre: String
+	nombre: String,
+	board: [Number]
 	
 })
 
